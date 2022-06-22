@@ -1,0 +1,14 @@
+
+##exportPattern("^[^\\.]")
+
+export(queue, WM, LqDist, WMdiffresp, WMdiffrespweight, WMdiffrespshift, WMdiffrespshiftweight, sim.ny)
+
+
+#import("graphics")
+#import("methods")
+import("stats")
+#import("utils")
+#importFrom("RandomFieldsUtils", Print)
+
+useDynLib(qmvs, .registration = TRUE, .fixes = "C_")
+
