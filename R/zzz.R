@@ -25,7 +25,7 @@
 }
 
 .onAttach <- function (lib, pkg) {
-#  packageStartupMessage("This is qmvs Version: 0.1.1") # qmvs Version: 0.0.1");
+#  packageStartupMessage("This is qmvs Version: 0.0.1");
 }
 
 .onDetach <- function(lib) {

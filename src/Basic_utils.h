@@ -226,6 +226,9 @@ typedef int64_t Long;
     RFERROR4("Severe error occured in function '%.50s' (file '%.50s', line %d).%.200s", \
 	     __FUNCTION__, __FILE__, __LINE__, CONTACT);			\
   }
+#undef BUG
+#define BUG ERR0("unexpected error occurred\n");
+
 
 //#define MEMCOPY(A,B,C) {MEMCPY(A,B,C); printf("memcpy %.50s %d\n", __FILE__, __LINE__);}
 #define MEMCOPY(A,B,C) MEMCOPYX(A,B,C)

@@ -1,5 +1,5 @@
 
-##exportPattern("^[^\\.]")
+#exportPattern("^[^\\.]")
 
 export(queue, WM, LqDist, WMdiffresp, WMdiffrespweight, WMdiffrespshift, WMdiffrespshiftweight, sim.ny)
 
