@@ -20,11 +20,11 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
 
 //
+#include "Basic_utils.h"
 #include <R.h>
 #include <Rinternals.h>
 #include <Rdefines.h>
 #include "def.h"
-#include "Basic_utils.h"
 #include "errors_messages.h"
 #include "qmvs.h"
 
@@ -41,8 +41,8 @@ SEXP queue(SEXP Miat, SEXP Mst, SEXP C, SEXP Pr, SEXP LLL,
 	   SEXP Misidd, SEXP MMisidt, SEXP AArrival, SEXP SServing,
 	   SEXP TPosition) {
    int
-     N = ncols(AArrival),
-     k = nrows(AArrival),
+     N = Rf_ncols(AArrival),
+     k = Rf_nrows(AArrival),
      *LL = INTEGER(LLL),  // rbinom --- Warum > 1 ??
      *orig_misidd = INTEGER(Misidd), // rbinom
      *Misidt = INTEGER(MMisidt), // rbinom
@@ -55,14 +55,14 @@ SEXP queue(SEXP Miat, SEXP Mst, SEXP C, SEXP Pr, SEXP LLL,
      *Arrival = REAL(AArrival),  // k x N
      *Serving = REAL(SServing);
   
-  if (N != ncols(SServing)) ERR0("not same number of cols");
-  if (N != length(TPosition)) ERR0("number of cols does not match length");
-  if (k != nrows(SServing)) ERR0("not same number of rowss");
+  if (N != Rf_ncols(SServing)) ERR0("not same number of cols");
+  if (N != Rf_length(TPosition)) ERR0("number of cols does not match length");
+  if (k != Rf_nrows(SServing)) ERR0("not same number of rowss");
   if (c > max_c) ERR0("too many servers");
   if (k > max_k) ERR0("too many customers");
 
   SEXP Result;
-  PROTECT(Result = allocMatrix(REALSXP, N, 5));
+  PROTECT(Result = Rf_allocMatrix(REALSXP, N, 5));
   double
     *result = REAL(Result);
   int bytes = sizeof(int) * k,
@@ -230,8 +230,8 @@ SEXP LqDist(SEXP E1, SEXP E2, SEXP Q) {
   int
     i1 = 0,
     i2 = 0,
-    n1 = length(E1),
-    n2 = length(E2);
+    n1 = Rf_length(E1),
+    n2 = Rf_length(E2);
   double
     t, t1, t2,
     invn1 = 1.0 / (double) n1,
@@ -309,7 +309,7 @@ SEXP LqDist(SEXP E1, SEXP E2, SEXP Q) {
     
   }
   SEXP ans; 
-  PROTECT(ans = allocVector(REALSXP, 1));
+  PROTECT(ans = Rf_allocVector(REALSXP, 1));
   //  REAL(ans)[0] = POW(sum, 1.0 / q);
   REAL(ans)[0] = sum;
   UNPROTECT(1);
@@ -322,8 +322,8 @@ SEXP queue1(SEXP Miat, SEXP Mst, SEXP C, SEXP Pr, SEXP LLL,
 	   SEXP Misidd, SEXP MMisidt, SEXP AArrival, SEXP SServing,
 	   SEXP TPosition) {
    int
-     N = ncols(AArrival),
-     k = nrows(AArrival),
+     N = Rf_ncols(AArrival),
+     k = Rf_nrows(AArrival),
      *LL = INTEGER(LLL),  // rbinom --- Warum > 1 ??
      *orig_misidd = INTEGER(Misidd), // rbinom
      *Misidt = INTEGER(MMisidt), // rbinom
@@ -336,14 +336,14 @@ SEXP queue1(SEXP Miat, SEXP Mst, SEXP C, SEXP Pr, SEXP LLL,
      *Arrival = REAL(AArrival),  // k x N
      *Serving = REAL(SServing);
   
-  if (N != ncols(SServing)) ERR0("not same number of cols");
-  if (N != length(TPosition)) ERR0("number of cols does not match length");
-  if (k != nrows(SServing)) ERR0("not same number of rowss");
+  if (N != Rf_ncols(SServing)) ERR0("not same number of cols");
+  if (N != Rf_length(TPosition)) ERR0("number of cols does not match length");
+  if (k != Rf_nrows(SServing)) ERR0("not same number of rowss");
   if (c > max_c) ERR0("too many servers");
   if (k > max_k) ERR0("too many customers");
 
   SEXP Result;
-  PROTECT(Result = allocMatrix(REALSXP, N, 5));
+  PROTECT(Result = Rf_allocMatrix(REALSXP, N, 5));
   double
     *result = REAL(Result);
   int bytes = sizeof(int) * k,
@@ -510,8 +510,8 @@ SEXP queue2(SEXP Miat, SEXP Mst, SEXP C, SEXP Pr, SEXP LLL,
 	   SEXP Misidd, SEXP MMisidt, SEXP AArrival, SEXP SServing,
 	   SEXP TPosition) {
    int
-     N = ncols(AArrival),
-     k = nrows(AArrival),
+     N = Rf_ncols(AArrival),
+     k = Rf_nrows(AArrival),
      *LL = INTEGER(LLL),  // rbinom --- Warum > 1 ??
      *orig_misidd = INTEGER(Misidd), // rbinom
      *Misidt = INTEGER(MMisidt), // rbinom
@@ -524,14 +524,14 @@ SEXP queue2(SEXP Miat, SEXP Mst, SEXP C, SEXP Pr, SEXP LLL,
      *Arrival = REAL(AArrival),  // k x N
      *Serving = REAL(SServing);
   
-  if (N != ncols(SServing)) ERR0("not same number of cols");
-  if (N != length(TPosition)) ERR0("number of cols does not match length");
-  if (k != nrows(SServing)) ERR0("not same number of rowss");
+  if (N != Rf_ncols(SServing)) ERR0("not same number of cols");
+  if (N != Rf_length(TPosition)) ERR0("number of cols does not match length");
+  if (k != Rf_nrows(SServing)) ERR0("not same number of rowss");
   if (c > max_c) ERR0("too many servers");
   if (k > max_k) ERR0("too many customers");
 
   SEXP Result;
-  PROTECT(Result = allocMatrix(REALSXP, N, 5));
+  PROTECT(Result = Rf_allocMatrix(REALSXP, N, 5));
   double
     *result = REAL(Result);
   int bytes = sizeof(int) * k,

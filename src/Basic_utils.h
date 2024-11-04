@@ -68,7 +68,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 #include "AutoRandomFieldsUtils.h"
 
-#define RFERROR error
+#define RFERROR Rf_error
 
 #define RFERROR1(M,A) {errorstring_type E_AUX; \
     SPRINTF(E_AUX, M, A); RFERROR(E_AUX);}

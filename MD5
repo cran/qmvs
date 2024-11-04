@@ -1,10 +1,11 @@
-5e9c70fd4efe90ee3ffdaf99786c8373 *DESCRIPTION
+89527884f33b874632cfd8f3890f5ab3 *DESCRIPTION
 56f8cad6c615cc4e47023337ed27e91e *NAMESPACE
 0d8bcb6d1af49d12c1ce55e3522ad24e *R/diffresp.R
 af93fa26d926176239cd8fa8eca19ce0 *R/qmvs.R
 bb6f1bf22826841fa54acc76123462c8 *R/sim.R
 768b3f8d745d88cde1afb9d5193b4487 *R/zzz.R
-0c6ad5b3446721162c89589e8077ab1c *build/partial.rdb
+cb3b20077bebc5da31fc1b46c657c0ff *build/partial.rdb
+d41d8cd98f00b204e9800998ecf8427e *configure
 fff8576a43c508177e914a74dc2f9e00 *man/LqDist.Rd
 2004a44312f163acefde2a81437117b9 *man/distance.Rd
 90afb734adcf9dcfcf2609d182b1ab9d *man/macros/defn.Rd
@@ -12,9 +13,9 @@ fff8576a43c508177e914a74dc2f9e00 *man/LqDist.Rd
 d15df6081e0ba33bfb231f0c0be07ab7 *man/sim.Rd
 62bf67bc0b262058a87e369393b427d0 *src/AutoRandomFieldsUtils.h
 b213a6789d40f1efd04f0cdaba365df1 *src/AutoRandomFieldsUtilsLocal.h
-e0a67c3d84af64255e5581441a692c63 *src/Basic_utils.h
-33b713b27e8594c344bdd359077aca2a *src/def.h
+244c10dce16c7c5534c1b138e29473ae *src/Basic_utils.h
+e22b74569836cfa34ac2ed63507c1479 *src/def.h
 b71bf56fd0962fc241c0662bbd70189c *src/errors_messages.h
-e533a591c3513119bd1893acb631d98e *src/qmvs.cc
+47d71dadc71d310fa72e4abea1cbd2e6 *src/qmvs.cc
 38506781bba9386f6a29cce6d0a3a9f8 *src/qmvs.h
 d6f2c640cfd17a3c744cca6235709275 *src/zzz.c

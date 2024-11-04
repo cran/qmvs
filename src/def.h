@@ -29,6 +29,6 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #ifndef qmvs_def_H
 #define qmvs_def_H 1
 
-
+// _R_CXX_USE_NO_REMAP_=true 
 
 #endif // qmvs_def_H
